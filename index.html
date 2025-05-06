@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Untuk Kamu, Cintaku 💘</title>
+  <title>Untuk Kamu yang Tercinta 💘</title>
   <style>
     body {
       margin: 0;
@@ -30,26 +30,27 @@
     .typing-text {
       font-size: 1.2em;
       text-align: center;
-      margin-bottom: 20px;
-      width: 80%;
-      min-height: 50px;
+      margin: 20px;
+      max-width: 80%;
+      min-height: 80px;
       border-right: 2px solid #ff66b2;
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 6s steps(60, end), blink 0.7s step-end infinite;
+      animation: typing 12s steps(100, end), blink 0.7s step-end infinite;
     }
 
-    video {
+    img {
       width: 80%;
-      max-width: 600px;
+      max-width: 400px;
       border-radius: 20px;
       border: 5px solid #ff99cc;
       box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
+      margin-bottom: 20px;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 80%; }
+      to { width: 100%; }
     }
 
     @keyframes blink {
@@ -103,7 +104,6 @@
       }
     }
 
-    /* Multiple hearts */
     .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
     .heart:nth-child(2) { left: 30%; animation-delay: 1s; }
     .heart:nth-child(3) { left: 50%; animation-delay: 2s; }
@@ -112,12 +112,10 @@
   </style>
 </head>
 <body>
-  <h1>Untuk Kamu yang Selalu di Hatiku 💖</h1>
+  <h1>Untuk Kamu, Pemilik Hatiku 💖</h1>
+  <img src="Gambar1.jpeg" alt="Foto Romantis" />
+
   <div class="typing-text" id="typing"></div>
-  <video controls>
-    <source src="video-kamu.mp4" type="video/mp4" />
-    Maaf, browser kamu tidak mendukung video.
-  </video>
 
   <!-- Floating hearts -->
   <div class="heart"></div>
@@ -126,15 +124,8 @@
   <div class="heart"></div>
   <div class="heart"></div>
 
-  <!-- Musik latar (autoplay + loop) -->
-  <audio autoplay loop hidden>
-    <source src="lagu-romantis.mp3" type="audio/mpeg" />
-    Browser kamu tidak mendukung audio.
-  </audio>
-
   <script>
-    // Efek ketik untuk pesan bucin
-    const text = "Sayang, kamu adalah alasan aku senyum setiap hari. Aku cinta kamu selalu, selamanya 💕";
+    const text = "Sayangku, setiap detik bersamamu adalah anugerah. Tatapanmu menenangkan hatiku, senyummu menyinari hariku, dan cintamu adalah hal terindah yang pernah aku miliki. Terima kasih sudah menjadi rumah untuk hatiku. Aku janji akan terus mencintaimu, hari ini, esok, dan selamanya. 💕";
     let index = 0;
     function typeWriter() {
       if (index < text.length) {
