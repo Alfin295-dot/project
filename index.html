@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk Kamu, Cintaku 💘</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe6f0, #ffcce0);
+      font-family: 'Segoe Script', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      color: #ff4d88;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px white;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .typing-text {
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 20px;
+      width: 80%;
+      min-height: 50px;
+      border-right: 2px solid #ff66b2;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 6s steps(60, end), blink 0.7s step-end infinite;
+    }
+
+    video {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 20px;
+      border: 5px solid #ff99cc;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.5);
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 80%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Heart animation */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff80bf;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff80bf;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: 0;
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+        transform: translateX(-50px) rotate(720deg);
+      }
+    }
+
+    /* Multiple hearts */
+    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 30%; animation-delay: 1s; }
+    .heart:nth-child(3) { left: 50%; animation-delay: 2s; }
+    .heart:nth-child(4) { left: 70%; animation-delay: 3s; }
+    .heart:nth-child(5) { left: 90%; animation-delay: 4s; }
+  </style>
+</head>
+<body>
+  <h1>Untuk Kamu yang Selalu di Hatiku 💖</h1>
+  <div class="typing-text" id="typing"></div>
+  <video controls>
+    <source src="video-kamu.mp4" type="video/mp4" />
+    Maaf, browser kamu tidak mendukung video.
+  </video>
+
+  <!-- Floating hearts -->
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+
+  <!-- Musik latar (autoplay + loop) -->
+  <audio autoplay loop hidden>
+    <source src="lagu-romantis.mp3" type="audio/mpeg" />
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <script>
+    // Efek ketik untuk pesan bucin
+    const text = "Sayang, kamu adalah alasan aku senyum setiap hari. Aku cinta kamu selalu, selamanya 💕";
+    let index = 0;
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("typing").textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
